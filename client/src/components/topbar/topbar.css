@@ -1,7 +1,7 @@
 /* TODO: */
 
 /* 1. Define the height and display(flex) of Top Container */
-/* 2. Define the size of left, center, right by using flex 12 scale */
+/* 2. Define the size of left(3), center(5), right(4) by using flex 12 scale */
 /* 3. adjust items within left, center, right */
 
 .topbarContainer {
@@ -13,10 +13,10 @@
 /* Left */
 .topbarLeft {
   flex: 3;
+  margin-left: 130px;
 }
 .logo {
   font-size: 24px; font-weight: bold; color: white;
-  margin-left: 130px;
   /* margin-left: 20px; */
   cursor: pointer;
 }
@@ -49,8 +49,8 @@
 
 /* Right */
 .topbarRight {
-  margin-right: 130px;
   flex: 4;
+  margin-right: 130px;
   display: flex; align-items: center; justify-content: flex-end;
   color: white;
 }

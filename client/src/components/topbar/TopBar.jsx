@@ -1,5 +1,11 @@
 import "./topbar.css"
 import { Search, Person, Chat, Notifications } from "@mui/icons-material"
+
+// TODO
+
+// 1. Topbar is divided into three classes: left(3), center(5), right(4)
+// 2. Three classes are wrapped by the container
+
 export default function TopBar() {
   return (
     <div className="topbarContainer">
