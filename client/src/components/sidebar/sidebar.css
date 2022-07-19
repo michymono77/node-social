@@ -1,11 +1,14 @@
 .sidebar {
+  margin-left: 130px;
   flex: 3;
   /* height subtracted by the height of the nav */
   height: calc(100vh - 50px);
+  overflow-y: scroll;
 }
 
 .sidebarWrapper  {
-  padding: 20px;
+  /* padding: 20px; */
+  padding: 20px 20px 20px 0;
 }
 
 .sidebarList{

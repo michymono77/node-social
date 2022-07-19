@@ -60,6 +60,34 @@ export default function Sidebar() {
             <img src="/assets/person/2.jpeg" alt="friend" className="sidebarFriendImg" />
             <span className="sidebarFriendName">John Doe</span>
           </li>
+          <li className="sidebarFriend">
+            <img src="/assets/person/2.jpeg" alt="friend" className="sidebarFriendImg" />
+            <span className="sidebarFriendName">John Doe</span>
+          </li>
+          <li className="sidebarFriend">
+            <img src="/assets/person/2.jpeg" alt="friend" className="sidebarFriendImg" />
+            <span className="sidebarFriendName">Freude Doe</span>
+          </li>
+          <li className="sidebarFriend">
+            <img src="/assets/person/2.jpeg" alt="friend" className="sidebarFriendImg" />
+            <span className="sidebarFriendName">John Doe</span>
+          </li>
+          <li className="sidebarFriend">
+            <img src="/assets/person/2.jpeg" alt="friend" className="sidebarFriendImg" />
+            <span className="sidebarFriendName">John Doe</span>
+          </li>
+          <li className="sidebarFriend">
+            <img src="/assets/person/2.jpeg" alt="friend" className="sidebarFriendImg" />
+            <span className="sidebarFriendName">John Doe</span>
+          </li>
+          <li className="sidebarFriend">
+            <img src="/assets/person/2.jpeg" alt="friend" className="sidebarFriendImg" />
+            <span className="sidebarFriendName">John Doe</span>
+          </li>
+          <li className="sidebarFriend">
+            <img src="/assets/person/2.jpeg" alt="friend" className="sidebarFriendImg" />
+            <span className="sidebarFriendName">John Doe</span>
+          </li>
         </ul>
       </div>
     </div>
