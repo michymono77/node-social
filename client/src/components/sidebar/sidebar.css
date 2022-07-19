@@ -3,6 +3,9 @@
   flex: 3;
   /* height subtracted by the height of the nav */
   height: calc(100vh - 50px);
+  position: sticky;
+  top: 50px;
+  /* scrollable */
   overflow-y: scroll;
 }
 
@@ -50,7 +53,7 @@
 
 .sidebarHr {
   margin: 20px 0;
-  
+
 }
 
 .sidebarFriendList {
@@ -59,7 +62,7 @@
   list-style: none;
 }
 
-.sidebarFriend{
+/* .sidebarFriend{
   display: flex;
   align-items: center;
   margin-bottom: 15px;
@@ -70,4 +73,4 @@
   border-radius: 50%;
   object-fit: cover;
   margin-right: 10px;
-}
+} */
