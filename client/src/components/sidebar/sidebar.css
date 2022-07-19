@@ -6,6 +6,19 @@
   overflow-y: scroll;
 }
 
+/* restyle scroll bar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: gray;
+}
+
 .sidebarWrapper  {
   /* padding: 20px; */
   padding: 20px 20px 20px 0;
@@ -37,6 +50,7 @@
 
 .sidebarHr {
   margin: 20px 0;
+  
 }
 
 .sidebarFriendList {
