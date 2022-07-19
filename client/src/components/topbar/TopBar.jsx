@@ -20,8 +20,8 @@ export default function TopBar() {
       {/* TODO: Links, Icons, Profile image  */}
       <div className="topbarRight">
         <div className="topbarLinks">
-          <span className="tobarlink">Home</span>
-          <span className="tobarlink">Timeline</span>
+          <span className="topbarLink">Home</span>
+          <span className="topbarLink">Timeline</span>
         </div>
         <div className="topbarIcons">
           <div className="topbarIconItem">

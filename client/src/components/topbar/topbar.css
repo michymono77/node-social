@@ -2,7 +2,7 @@
 
 /* 1. Define the height and display(flex) of Top Container */
 /* 2. Define the size of left, center, right by using flex 12 scale */
-
+/* 3. adjust items within left, center, right */
 
 .topbarContainer {
   height: 50px; width: 100%; background-color: #1877f2;
@@ -16,12 +16,15 @@
 }
 .logo {
   font-size: 24px; font-weight: bold; color: white;
-  margin-left: 20px; cursor: pointer;
+  margin-left: 130px;
+  /* margin-left: 20px; */
+  cursor: pointer;
 }
 
 /* Center */
 .topbarCenter {
   flex: 5;
+
 }
 
 .searchbar {
@@ -37,7 +40,7 @@
 
 .searchInput {
   border: none;
-  width: 70%;
+  width: 80%;
 }
 
 .searchInput:focus {
@@ -46,8 +49,9 @@
 
 /* Right */
 .topbarRight {
+  margin-right: 130px;
   flex: 4;
-  display: flex; align-items: center; justify-content: space-around;
+  display: flex; align-items: center; justify-content: flex-end;
   color: white;
 }
 
@@ -76,5 +80,7 @@
   display: flex; align-items: center; justify-content: center;
 }
 
-.topbarImg { width: 32px; height: 32px; border-radius: 50%;
-  object-fit: cover; cursor: pointer;}
+.topbarImg {
+  width: 32px; height: 32px; border-radius: 50%;
+  object-fit: cover; cursor: pointer;
+}
