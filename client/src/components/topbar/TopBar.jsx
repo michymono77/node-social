@@ -1,6 +1,6 @@
 import "./topbar.css"
 import { Search, Person, Chat, Notifications } from "@mui/icons-material"
-
+import {Link} from "react-router-dom"
 // TODO
 
 // 1. Topbar is divided into three classes: left(3), center(5), right(4)
@@ -11,7 +11,9 @@ export default function TopBar() {
     <div className="topbarContainer">
       {/* TODO: Logo */}
       <div className="topbarLeft">
-        <span className="logo">Michisocial</span>
+        <Link to="/" style={{textDecoration: "none" }}>
+          <span className="logo">Michisocial</span>
+        </Link>
       </div>
       {/* TODO: Search */}
       <div className="topbarCenter">
