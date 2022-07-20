@@ -1,10 +1,10 @@
 .sidebar {
-  margin-left: 130px;
+  padding-left: 130px;
   flex: 3;
   /* height subtracted by the height of the nav */
-  height: calc(100vh - 50px);
+  height: calc(100vh - 70px);
   position: sticky;
-  top: 50px;
+  top: 70px;
   /* scrollable */
   overflow-y: scroll;
 }

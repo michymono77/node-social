@@ -1,9 +1,13 @@
 .rightbar {
   flex:3.5;
+  position: sticky;
+  top: 70px;
+  height: calc(100vh - 70px);
+  padding-right: 130px;
 }
 
 .rightbarWrapper {
-  padding: 20px 20px 0 0;
+  padding: 20px 0 0 20px;
 }
 
 .birthdayContainer {
