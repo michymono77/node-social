@@ -1,12 +1,19 @@
-import "./topbar.css"
 import { Search, Person, Chat, Notifications } from "@mui/icons-material"
-import {Link} from "react-router-dom"
+import "./topbar.css";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../pages/context/AuthContext";
 // TODO
 
 // 1. Topbar is divided into three classes: left(3), center(5), right(4)
 // 2. Three classes are wrapped by the container
 
 export default function TopBar() {
+
+  // TODO find a current user
+  const { user } = useContext(AuthContext);
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
   return (
     <div className="topbarContainer">
       {/* TODO: Logo */}
@@ -45,7 +52,15 @@ export default function TopBar() {
             <span className="topbarIconBadge">1</span>
           </div>
         </div>
-        <img src="/assets/person/1.jpeg" alt="person" className="topbarImg" />
+        <Link to={`/profile/${user.username}`}>
+          <img src={
+            user.profilePicture
+            ? PF+ user.profilePicture
+            : PF+ "person/noAvatar.png"
+            }
+            alt="person"
+            className="topbarImg" />
+        </Link>
       </div>
     </div>
   )
