@@ -34,11 +34,11 @@ export default function Profile() {
             <div className="profileCover">
               <img className="profileCoverImg"
               // src={`${PF}post/3.jpeg`}
-              src={user.coverPicture || PF+"person/noCover.png"}
+                src={user.coverPicture ? PF + user.coverPicture : PF+"person/noCover.png"}
               alt="cover" />
               <img className="profileUserImg"
               // src={`${PF}post/7.jpeg`}
-              src={user.profilePicture || PF + "person/noAvatar.png"}
+                src={user.profilePicture ? PF + user.profilePicture : PF + "person/noAvatar.png"}
               alt="avatar" />
             </div>
             <div className="profileInfo">

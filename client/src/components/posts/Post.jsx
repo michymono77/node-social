@@ -2,9 +2,11 @@ import "./post.css"
 import { MoreVert } from "@mui/icons-material"
 // import { Users } from "../../dummyData";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { format } from "timeago.js";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import axios from "axios";
+import { useContext } from "react";
+import { AuthContext} from "../../pages/context/AuthContext";
 // note that the prop { post } originally comes from dummyData;
 // now we are using api
 
@@ -15,6 +17,13 @@ export default function Post({ post }) {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
 
   const [user, setUser] = useState({});
+  const { user:currentUser } = useContext(AuthContext);
+
+  useEffect(()=>{
+    setIsLiked(post.likes.includes(currentUser._id))
+  }, [currentUser._id, post.likes])
+
+
   useEffect(() => {
     const fetchUser = async () => {
       const res = await axios.get(`/users/?userId=${post.userId}`)
@@ -25,6 +34,11 @@ export default function Post({ post }) {
   }, [post.userId])
 
   const likeHandler = ()=> {
+    try {
+      axios.put("/posts/" + post._id+"/like", {userId: currentUser._id})
+    } catch (err) {
+
+    }
     setLike(isLiked ? like-1 : like+1)
     setIsLiked(!isLiked)
   }
@@ -34,9 +48,10 @@ export default function Post({ post }) {
         <div className="postTop">
           <div className="postTopLeft">
             <Link to={`profile/${user.username}`}>
-              <img className="postProfileImg"
+              <img
+              className="postProfileImg"
               // src={PF + Users.filter(u => u.id === post?.userId)[0].profilePicture}
-              src={user.profilePicture || PF+"person/noAvatar.png"}
+              src={user.profilePicture ? PF+user.profilePicture : PF+"person/noAvatar.png"}
               alt="person" />
             </Link>
             <span className="postUsername">
