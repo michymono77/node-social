@@ -1,15 +1,27 @@
 import "./rightbar.css"
 import { Users } from "../../dummyData";
 import Online from "../online/Online";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../pages/context/AuthContext";
+import { Add, Remove } from "@mui/icons-material";
 
 export default function Rightbar({user}) {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
-
+  const { user: currentUser, dispatch } = useContext(AuthContext);
 
   const [friends, setFriends] = useState([])
+  const [followed, setFollowed] = useState(currentUser.followings.includes(user?.id))
+
+
+  // to determine whether you are following the profile or not
+
+  useEffect (()=>{
+    setFollowed(currentUser.followings.includes(user?.id))
+  }, [currentUser, user])
+
+
   // get friends
 
   useEffect(() => {
@@ -23,6 +35,21 @@ export default function Rightbar({user}) {
     };
     getFriends();
   }, [user]);
+
+  const handleClick = async () => {
+    try {
+      if(followed) {
+        await axios.put("/users/"+user._id+"/unfollow", {userId:currentUser._id});
+        dispatch({type:"UNFOLLOW", payload:user._id})
+      } else {
+        await axios.put("/users/" + user._id + "/follow", { userId: currentUser._id })
+        dispatch({ type: "FOLLOW", payload: user._id })
+      }
+    } catch(err){
+      console.log(err);
+    }
+    setFollowed(!followed)
+  }
 
   // if you are on the home page
 
@@ -48,6 +75,12 @@ export default function Rightbar({user}) {
   const ProfileRightbar = ()=>{
     return (
       <>
+      {user.username !== currentUser.username && (
+        <button className="rightbarFollowButton" onClick={handleClick}>
+          {followed ? "Unfollow" : "Follow"}
+            {followed ? <Remove /> : <Add />}
+        </button>
+      )}
         <h4 className="rightbarTitle">User Information</h4>
 
         <div className="rightbarInfo">
